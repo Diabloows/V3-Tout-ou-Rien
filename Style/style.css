@@ -56,3 +56,52 @@ header h1{
   font-size:1.2rem;
   display:none;
 }
+
+/* Interface du jeu */
+main{
+  margin:30px 0px;
+}
+  
+#main-left{
+  box-shadow:0px 0px 15px #8c1b9b;
+}
+  
+#main-left img, #main-right img{
+  width:250px;
+  height:250px;
+}
+  
+main #dice-image{
+  width: 100px;
+  height:100px;
+  margin-top:60px
+}
+  
+  
+/* Boutons */
+main button{
+  font-size:1.2rem;
+  letter-spacing:1px;
+  border:solid 2px;
+  border-radius:25px;
+  background-color: rgb(107, 55, 95);
+  cursor:pointer;
+}
+  
+#throw{
+  padding:10px 5px;
+}
+  
+#hold{
+  padding:10px 5px;
+}
+  
+#throw, #hold{
+  margin:10px 0px;
+}
+  
+#new-game{
+  padding:8px;
+  margin-top:25px;
+}
+  
