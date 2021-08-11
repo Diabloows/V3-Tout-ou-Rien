@@ -104,4 +104,50 @@ main button{
   padding:8px;
   margin-top:25px;
 }
+
+/* Elements de texte et score */
+.p-text{
+  font-size:1.4rem;
+  letter-spacing:1px;
+  color:#83154c;
+  font-weight:700;
+  text-align:center;
+}
   
+.current{
+  margin:15px 0px;
+  font-size:1.3rem;
+  font-weight:600;
+  color:#000000;
+}
+  
+.global{
+  font-size:1.3rem;
+  font-weight:500;
+  padding:3px;
+  margin: 10px 0px;
+}
+  
+.player-size{
+  font-size:1.8rem;
+  font-weight:bold;
+  margin-top:5px;
+}
+  
+#div-score-global{
+  background-color:#4d0730;
+  color:white;
+  padding:5px 5px 10px 5px;
+  margin-top:10px;
+}
+  
+.global ~ p, .current ~ p{
+  font-size:1.5rem;
+}
+  
+#main-left, #main-right{
+  margin:30px 120px;
+  padding-top:20px;
+  text-align:center;
+  font-size:1.3rem;
+}
