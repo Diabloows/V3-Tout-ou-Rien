@@ -47,3 +47,46 @@ let Player = function(id, name) {
     }
 };
 
+/* Fonction du lancé de dès */
+
+Player.prototype.play = function() {
+    let random = randomNumber();
+    diceImage.setAttribute("src", diceImageToNumber[random]);
+    setButtonStyle(active === true);
+    if(random !== 1) {
+      result = this.resultCurrentScore += random;
+      this.currentScore.innerText = result;
+      text1.innerText = "C\'est au tour de " + this.name;
+      stateText.style.display= 'inline-block';
+      if(result === undefined){
+          stateText.innerText = this.name + " gagne 0 points";
+        } else {
+          stateText.innerText = this.name + " gagne " + this.currentScore.innerText + " points";
+        }
+  
+      if(result >= 100){
+          win();
+        }
+  
+    } else if(random === 1) {
+      if(result === undefined) {
+          stateText.innerText = this.name + " perd 0 points";
+        } else {
+          stateText.innerText = this.name + " perd " + this.currentScore.innerText + " points";
+        }
+        stateText.style.display= 'inline-block';
+        this.currentScore.innerText = 0;
+        result = 0;
+        this.resultCurrentScore = 0;
+  
+      /* Changement du joueur */
+      if (this.id === 1) {
+          currentPlayer = 2
+        } else {
+         currentPlayer = 1
+        }
+        setMainStyle(players[currentPlayer].id);
+        text1.innerText = "C\'est au tour de " + players[currentPlayer].name;
+    }
+}
+
