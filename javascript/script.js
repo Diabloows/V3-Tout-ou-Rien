@@ -59,9 +59,9 @@ Player.prototype.play = function() {
       text1.innerText = "C\'est au tour de " + this.name;
       stateText.style.display= 'inline-block';
       if(result === undefined){
-          stateText.innerText = this.name + " gagne 0 points";
+          stateText.innerText = this.name + " gagne 0 pierres";
         } else {
-          stateText.innerText = this.name + " gagne " + this.currentScore.innerText + " points";
+          stateText.innerText = this.name + " gagne " + this.currentScore.innerText + " pierres";
         }
   
       if(result >= 100){
@@ -70,9 +70,9 @@ Player.prototype.play = function() {
   
     } else if(random === 1) {
       if(result === undefined) {
-          stateText.innerText = this.name + " perd 0 points";
+          stateText.innerText = this.name + " perd 0 pierres";
         } else {
-          stateText.innerText = this.name + " perd " + this.currentScore.innerText + " points";
+          stateText.innerText = this.name + " perd " + this.currentScore.innerText + " pierres";
         }
         stateText.style.display= 'inline-block';
         this.currentScore.innerText = 0;
@@ -100,7 +100,7 @@ Player.prototype.saveScore = function(){
   
       if(this.resultGlobalScore < 100){
           stateText.style.display= 'inline-block';
-          stateText.innerText = this.name + " sécurise " + this.resultCurrentScore + " points";
+          stateText.innerText = this.name + " sécurise " + this.resultCurrentScore + " pierres";
           this.resultCurrentScore = 0;
   
           /* Changement de joueur */
@@ -134,5 +134,80 @@ let players = {
   2: new Player(2, 'Thanos')
 };
 
+/* Fonctions */
 
+/* Fonction de randomiser du dès */
+
+function randomNumber () {
+     return Math.floor(Math.random() * 6) +1;
+}
+  
+/* Fonction d'affichage bordure du joueur en cours */
+
+function setMainStyle(id) {
+      players[id].main.style.boxShadow = '0px 0px 15px #D4299B';
+      if (id === 1) {
+          players[2].main.style.boxShadow = '0px 0px 0px transparent';
+        } else {
+          players[1].main.style.boxShadow = '0px 0px 0px transparent';
+        }
+}
+  
+/* Fonction boutons on/off */
+let active = true;
+function setButtonStyle(active){
+    if(active === true){
+      buttonDiceThrow.setAttribute('class', 'on');
+      hold.setAttribute('class', 'on');
+    } else if (active ===false){
+      buttonDiceThrow.setAttribute('class', 'disabled');
+      hold.setAttribute('class', 'disabled');
+    }
+}
+  
+/* Fonction de victoire */
+
+function win() {
+    stateText.style.display= 'none';
+    winText.innerText = 'Victoire de ' + players[currentPlayer].name + ' !';
+    winText.style.display= 'inline-block';
+    buttonDiceThrow.disabled = true;
+    hold.disabled = true;
+    setButtonStyle(active === false);
+    setMainStyle(players[currentPlayer].id);
+}
+  
+/* Fonction nouvelle partie */
+
+function startGame() {
+    setButtonStyle(active === true);
+    currentPlayer = 1
+    text1.innerText = 'C\'est au tour de ' + players[currentPlayer].name;
+    setMainStyle(players[currentPlayer].id);
+    stateText.style.display= 'none';
+    winText.style.display = 'none';
+    buttonDiceThrow.disabled = false;
+    hold.disabled = false;
+    players[1].reset();
+    players[2].reset();
+}
+  
+
+/* Evenement lancé de dès */
+buttonDiceThrow.addEventListener ('click', () => {
+    players[currentPlayer].play();
+});
+  
+/* Evenement bouton garder le montant */
+
+hold.addEventListener('click', () => {
+    players[currentPlayer].saveScore()
+});
+  
+/* Evenement nouvelle partie */
+
+newGame.addEventListener('click', () =>{
+    startGame();
+});
+  
   

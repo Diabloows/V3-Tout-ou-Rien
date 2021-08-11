@@ -2,8 +2,8 @@
 <html lang="fr">
 
 <head>
-  <title>Tout ou Rien</title>
-  <meta name="Description" content="Tout ou rien jeu de dès ou vous vous affronterez pour récupérer les pierres d'infinité.">
+  <title>Les 100 Pierres</title>
+  <meta name="Description" content="Les 100 Pierres est un jeu de lancé de dès ou vous vous affronterez pour récupérer les pierres d'infinité.">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,14 @@
 
 <body>
     <header class="d-flex flex-column justify-content-center align-items-center" style="color:aliceblue">
-      <h1>Tout ou Rien</h1>
+      <h1>Les 100 Pierres</h1>
       <div id="header-parent">
           <button id="titre-regles" class="icon-regles" data-button="btnregles">REGLES</button>
                   <ul class="showData">
                       <li>Vous allez être en face to face.</li>
                       <li>Les joueurs joueront l'un après l'autre avec les pierres d'infinités à 6 faces.</li>
                       <li>Durant son tour le joueur pourra continuer de lancer les pierres ou de garder sa somme.</li>
-                      <li>Mais attention si la pierre d'inifnité tirée tombe sur la 1 vous perdez le total de votre tour et le dès passe à votre adversaire.</li>
+                      <li>Mais attention si la pierre d'inifnité tirée tombe sur la 1 vous perdez le total de votre tour et les pierres passent à votre adversaire.</li>
                       <li>Etre joueur et relancer les pierres ou être prudent et garder son total? A vous d'en décider!</li>
                       <li>Le premier avec un total de 100 remporte la partie</li>
                       <li>Qui de Thanos ou Ironman gagnera ? Bonne chance à vous ! </li>
@@ -37,10 +37,10 @@
           <img src="Images/iron-man.png">
           <div id="player-1">
             <h2 class="player-size" id="player-name1"></h2>
-            <h3 class="current">Score intermédiaire</h3>
+            <h3 class="current">Pierres en mains</h3>
             <p id="score-current-1">0</p>
             <div id="div-score-global">
-              <h3 class="global">Score acquis</h3>
+              <h3 class="global">Total des pierres</h3>
               <p id="score-global-1">0</p>
             </div>
           </div>
@@ -48,8 +48,8 @@
   
         <div class="d-flex flex-column justify-content-center align-items-center">
           <div class="d-flex flex-column">
-            <button id="throw" class="on">Lancer le dé</button>
-            <button id="hold" class="on">Sécuriser</button>
+            <button id="throw" class="on">Lancer</button>
+            <button id="hold" class="on">Garder</button>
           </div>
           <div class="space">
             <img id="dice-image" src="Images/Pierre1.png">
@@ -60,10 +60,10 @@
           <img src="Images/thanos.png">
           <div id="player-2">
             <h2 class="player-size" id="player-name2"></h2>
-            <h3 class="current">Score intermédiaire</h3>
+            <h3 class="current">Pierres en mains</h3>
             <p id="score-current-2">0</p>
             <div id="div-score-global">
-              <h3 class="global">Score acquis</h3>
+              <h3 class="global">Total des pierres</h3>
               <p id="score-global-2">0</p>
             </div>
           </div>
