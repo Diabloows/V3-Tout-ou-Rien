@@ -151,3 +151,64 @@ main button{
   text-align:center;
   font-size:1.3rem;
 }
+
+/* Ajout de @media pour s'adapter aux breaks points */
+
+@media screen and (max-width:1300px){
+#main-left{
+  margin:30px 50px 0px 0px;
+}
+    
+#main-right{
+     margin:30px 0px 0px 50px;
+    }
+}
+    
+@media screen and (max-width:800px){
+    #main-left{
+          margin:30px 40px 0px 0px;
+    }
+    #main-right{
+          margin:30px 0px 0px 40px;
+    }
+}
+    
+@media screen and (max-width:700px){
+    #main-left{
+          margin:30px 20px 0px 0px;
+    }
+    #main-right{
+          margin:30px 0px 0px 20px;
+    }
+    #main-left img, #main-right img{
+        width:200px;
+        height:200px;
+    }
+    main #dice-image{
+        width:70px;
+        height:70px;
+      }
+    }
+    
+@media screen and (max-width:600px){
+    #main-left img, #main-right img{
+      width:150px;
+      height:150px;
+    }
+    .current, .global{
+      font-size:1.1rem;
+    }
+}
+
+@media screen and (max-width:480px){
+    #main-left{
+          margin:30px 10px 0px 0px;
+    }
+    #main-right{
+          margin:30px 10px 0px 10px;
+    }
+    #main-left img, #main-right img{
+        width:100px;
+        height:100px;
+    }
+}
