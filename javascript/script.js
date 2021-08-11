@@ -1,3 +1,4 @@
+/* Fonction du bouton des règles */
 $(document).ready(function(){
 
  $('#titre-regles').click(function() {
@@ -24,3 +25,25 @@ var diceImageToNumber = {
   5: "Images/Pierre5.png" ,
   6: "Images/Pierre6.png"
 };
+
+let result;
+let currentPlayer = 1;
+
+/* Object Player pour evenement du DOM */
+
+let Player = function(id, name) {
+  this.name = name;
+  this.id = id;
+  this.resultCurrentScore = 0;
+  this.resultGlobalScore = 0;
+  this.domIdPlayer = document.getElementById('player-name' + this.id);
+  this.domIdPlayer.innerText = this.name;
+  this.currentScore = document.getElementById('score-current-' + this.id);
+  this.globalScore = document.getElementById('score-global-' + this.id);
+  if (this.id === 1) {
+     this.main = document.getElementById('main-left');
+    } else {
+     this.main = document.getElementById('main-right');
+    }
+};
+
