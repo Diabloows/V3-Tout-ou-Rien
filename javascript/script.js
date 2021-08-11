@@ -90,3 +90,49 @@ Player.prototype.play = function() {
     }
 }
 
+/* Fonction de garder le montant */
+
+Player.prototype.saveScore = function(){
+    this.resultGlobalScore += this.resultCurrentScore;
+    this.globalScore.innerText = this.resultGlobalScore;
+    this.currentScore.innerText = 0;
+    setButtonStyle(active === true);
+  
+      if(this.resultGlobalScore < 100){
+          stateText.style.display= 'inline-block';
+          stateText.innerText = this.name + " sécurise " + this.resultCurrentScore + " points";
+          this.resultCurrentScore = 0;
+  
+          /* Changement de joueur */
+          if (this.id === 1) {
+             currentPlayer = 2;
+            } else {
+             currentPlayer = 1;
+            }
+            setMainStyle(players[currentPlayer].id);
+            text1.innerText = "C\'est au tour de " + players[currentPlayer].name;
+        }
+  
+        if(this.resultGlobalScore >= 100){
+          win();
+        }
+}
+
+
+/* Fonction de remise à 0  */
+
+Player.prototype.reset = function() {
+    this.currentScore.innerText = 0;
+    this.resultCurrentScore = 0;
+    this.globalScore.innerText = 0;
+    this.resultGlobalScore = 0;
+}
+  
+/* Attribution du nom à l'object player */
+let players = {
+  1: new Player(1, 'Ironman'),
+  2: new Player(2, 'Thanos')
+};
+
+
+  
