@@ -1,0 +1,58 @@
+* {
+  font-family:'Lato', sans-serif;
+  margin:0;
+  padding:0;
+}
+  
+html, body{
+  height:100vh;
+}
+  
+/* Header titre et règles */
+header{
+  background-color:#450b53;
+}
+  
+header h1{
+  margin-top:12px;
+  padding:12px;
+  background-color:rgb(99, 31, 155);
+  border-radius:30px;
+  box-shadow:0 0 15px lightgray;
+}
+  
+.showData {
+  display: none;
+  margin-left: 20px; 
+  color: #fff;
+  list-style: none;
+  margin-bottom: 1px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+  
+#header-parent{
+  width:80%;
+  margin:20px 10px;
+}
+  
+#titre-regles{
+  border: none;
+  font-weight: bold;
+  padding: 8px;
+  background-color:rgb(151, 110, 163);
+  border-radius: 30px;
+  box-shadow:0 0 15px rgb(0, 0, 0);
+  width: 100%;
+  font-size: 25px;
+  cursor: pointer;
+}
+    
+#regles{
+  padding: 25px;
+  background:#fff;
+  line-height:1.7;
+  letter-spacing: 1px;
+  font-size:1.2rem;
+  display:none;
+}
